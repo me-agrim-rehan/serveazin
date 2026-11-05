@@ -4,12 +4,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import ProductsPage from './pages/ProductsPage'
 import About from './pages/About'
-import Contact from './pages/Contact'
+import Contact from './pages/contact'
 
 import Cybersecurity from './pages/Cybersecurity'
 import DigitalMarketing from './pages/DigitalMarketing'
-import SoftwareSaaS from './pages/SoftwareSaaS'
-import ITInfrastructure from './pages/ITInfrastructure'
+import SoftwareSaaS from './pages/SoftwareSaas'
+import ITInfrastructure from './pages/ITInfrastructure.'
 
 function App() {
   return (
