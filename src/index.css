@@ -1,0 +1,189 @@
+@import "tailwindcss";
+@font-face {
+  font-family: 'Serveazin';
+  src: url('./assets/fonts/celestial-mono-atelier-regular.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Serveazin', sans-serif;
+}
+
+
+.network-canvas {
+  isolation: isolate;
+}
+
+.network-grid {
+  background-image:
+    linear-gradient(to right, #0026520a 1px, transparent 1px),
+    linear-gradient(to bottom, #0026520a 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(circle, black 30%, transparent 78%);
+}
+
+.network-orbit {
+  position: absolute;
+  border: 1px solid #2563eb25;
+  border-radius: 50%;
+  inset: 12%;
+}
+
+.orbit-two {
+  inset: 25%;
+  border-style: dashed;
+  animation: orbit-spin 35s linear infinite;
+}
+
+@keyframes orbit-spin {
+  to { transform: rotate(360deg); }
+}
+
+.network-canvas svg path {
+  stroke: #2563eb65;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 6;
+  animation: network-flow 12s linear infinite;
+}
+
+@keyframes network-flow {
+  to { stroke-dashoffset: -100; }
+}
+
+.network-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background: #002652;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 12px #2563eb12, 0 0 45px #2563eb20;
+  z-index: 2;
+}
+
+.network-center span {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.network-center small {
+  font-size: 8px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+.network-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  z-index: 3;
+  color: #002652;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.node-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #2563eb35;
+  background: white;
+  color: #2563eb;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px #0026520d;
+  transition: transform 200ms ease, background 200ms ease;
+}
+
+.network-node:hover .node-icon {
+  transform: translateY(-5px);
+  background: #eff6ff;
+}
+
+.node-one { left: 10%; top: 17%; }
+.node-two { right: 8%; top: 17%; }
+.node-three { left: 7%; bottom: 17%; }
+.node-four { right: 7%; bottom: 17%; }
+
+.network-caption {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #64748b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-two,
+  .network-canvas svg path {
+    animation: none;
+  }
+}
+
+.floating-status {
+  position: absolute;
+  right: -2%;
+  top: 48%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 35px #00265212;
+  border-radius: 8px;
+}
+
+.floating-status strong {
+  display: block;
+  color: #002652;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.floating-status small {
+  display: block;
+  color: #64748b;
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #2563eb;
+  box-shadow: 0 0 0 4px #2563eb18;
+  animation: status-pulse 2s infinite;
+}
+
+@keyframes status-pulse {
+  50% { box-shadow: 0 0 0 8px transparent; }
+}
+
+@media (max-width: 640px) {
+  .floating-status {
+    right: 0;
+  }
+}
