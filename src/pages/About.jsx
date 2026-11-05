@@ -126,7 +126,6 @@ function About() {
                   <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
                     <span className="text-3xl font-semibold text-[#002652]">MK</span>
                   </div>
-                  <span className="text-xs tracking-widest">PHOTO PLACEHOLDER</span>
                 </div>
               </div>
 
@@ -199,7 +198,6 @@ function About() {
                   <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
                     <span className="text-3xl font-semibold text-[#002652]">VK</span>
                   </div>
-                  <span className="text-xs tracking-widest">PHOTO PLACEHOLDER</span>
                 </div>
               </div>
 
@@ -272,7 +270,6 @@ function About() {
                   <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
                     <span className="text-3xl font-semibold text-[#002652]">RS</span>
                   </div>
-                  <span className="text-xs tracking-widest">PHOTO PLACEHOLDER</span>
                 </div>
               </div>
 
